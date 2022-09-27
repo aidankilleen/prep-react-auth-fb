@@ -18,8 +18,10 @@ function App() {
             <Link to="/contact">Contact Us</Link> |{" "}
             <Link to="/members">Members</Link> 
 
-            {isAuthenticated && <button onClick={() => logout({returnTo:"https://devops2023.tk/"})}>Logout</button>}
+            {isAuthenticated && <button onClick={() => logout({ returnTo:window.location.origin })}>Logout</button>}
             
+            <hr/>
+            { window.location.origin }
         </nav>
         <Outlet/>
     </div>
