@@ -6,7 +6,7 @@ const Login = () => {
 
     return(
         <main>
-            <button onClick={loginWithRedirect}>Login</button>
+            <button onClick={loginWithRedirect({ redirectUri:`${window.location.origin}/members`})}>Login</button>
         </main>
     )
 
