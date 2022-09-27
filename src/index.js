@@ -6,18 +6,31 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './routes/about';
 import Contact from './routes/contact';
+import Login from './routes/login';
+import Members from './routes/members';
+import { Auth0Provider } from '@auth0/auth0-react';
+import Logout from './routes/logout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />}>
-                    <Route path="/about" element={<About />}/>
-                    <Route path="/contact" element={<Contact />}/>
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <Auth0Provider 
+            domain="dev-580a4kic.eu.auth0.com"
+            clientId="o5JEa3lTS6p41A7AINWHsK2yGP1BRQPK"
+            redirectUri={window.location.origin + '/members'}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<App />}>
+                        <Route path="/about" element={<About />}/>
+                        <Route path="/contact" element={<Contact />}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/members" element={<Members/>}/>
+                        <Route path="/logout" element={<Logout/>}/>
+                        
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </Auth0Provider>
     </React.StrictMode>
 );
 
