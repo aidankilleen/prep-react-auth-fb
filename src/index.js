@@ -10,6 +10,8 @@ import Login from './routes/login';
 import Members from './routes/members';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Logout from './routes/logout';
+import Profile from './routes/profile';
+import Admin from './routes/admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +27,8 @@ root.render(
                         <Route path="/contact" element={<Contact />}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/members" element={<Members/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/admin" element={<Admin/>}/>
                         <Route path="/logout" element={<Logout/>}/>
                         
                     </Route>

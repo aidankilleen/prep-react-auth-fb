@@ -18,6 +18,8 @@ function App() {
             <Link to="/contact">Contact Us</Link> |{" "}
             <Link to="/members">Members</Link> 
 
+            {isAuthenticated && <> | <Link to="/profile">Profile</Link></>}
+            {isAuthenticated && <> | <Link to="/admin">Admin</Link></>}
             {isAuthenticated && <button onClick={() => logout({ returnTo:window.location.origin })}>Logout</button>}
             
             <hr/>
